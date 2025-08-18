@@ -111,12 +111,6 @@ nav a:hover {
     width: 50%;
     margin-top: 20px;
 }
-
-.sky2 img{
-    width: 70%;
-    max-width: 200px;
-}
-
 .container2 img{
     width: 200px;
 }
@@ -1807,7 +1801,7 @@ html, body {
         }
         .sky2{
             position: relative;
-            z-index: 10;
+            z-index: 1;
             width: 800px;
         }
         .youtube-icon {
