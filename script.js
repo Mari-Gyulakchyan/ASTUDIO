@@ -149,16 +149,3 @@ document.addEventListener('DOMContentLoaded', () => {
         a.addEventListener('click', ()=> body.classList.remove('menu-open'));
     });
 })();
-(function(){
-    const mq = window.matchMedia('(max-width: 768px)');
-    const hero = document.querySelector('.hero');
-    const right = hero?.querySelector('.hero-right');
-    if(hero && right && mq.matches){
-
-        if(!document.querySelector('.hero-right--full')){
-            const full = right.cloneNode(true);
-            full.classList.add('hero-right--full');
-            hero.after(full);
-        }
-    }
-})();
