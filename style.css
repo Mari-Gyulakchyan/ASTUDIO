@@ -255,10 +255,11 @@ nav a:hover {
 }
 .rain {
     position: relative;
-    top: -35px;
+    top: -38px;
     left: 14%;
     width: 130px;
     display: flex;
+    z-index: 10;
     bottom: 50%;
 }
 .icons-row {
@@ -1368,7 +1369,8 @@ html, body {
             position: relative;
             top: -60px;
             width: 100px;
-            left: -20px;
+            left: -10px;
+            z-index: 10;
         }
             .girl{
                 position: relative;
