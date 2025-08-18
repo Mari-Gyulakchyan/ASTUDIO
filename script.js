@@ -15,7 +15,7 @@ const images = [
     "Photos/photo14.jpg",
     "Photos/photo15.jpg",
     "Photos/photo16.jpg",
-    "Photos/photo17.jpg"
+    "Photos/photo14.jpg"
 ];
 let currentIndex = 0;
 
@@ -34,6 +34,31 @@ function openLightbox(index) {
         thumbs.appendChild(img);
     });
 }
+const youtubeIndices = [1, 4, 9, 14];
+const photoGrid = document.querySelector('.photo-grid');
+const photos = photoGrid.querySelectorAll('img');
+
+youtubeIndices.forEach(index => {
+    const wrapper = document.createElement('div');
+    wrapper.style.position = 'relative';
+    wrapper.style.display = 'inline-block';
+
+    photos[index].parentNode.insertBefore(wrapper, photos[index]);
+    wrapper.appendChild(photos[index]);
+
+    const icon = document.createElement('img');
+    icon.src = 'Photos/youtube.png';
+    icon.style.position = 'absolute';
+    icon.style.top = '50%';
+    icon.style.left = '50%';
+    icon.style.transform = 'translate(-50%, -50%)';
+    icon.style.width = '40px';
+    icon.style.height = '40px';
+    icon.style.pointerEvents = 'none';
+
+    icon.classList.add('youtube-icon');
+    wrapper.appendChild(icon);
+});
 
 function closeLightbox() {
     document.getElementById("lightbox").style.display = "none";
@@ -80,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
     closers.forEach(el => el.addEventListener('click', closeModal));
     window.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-    // клик по фону закрывает, по диалогу — нет
     modal.addEventListener('click', e => {
         if (!dialog.contains(e.target)) closeModal();
     });
